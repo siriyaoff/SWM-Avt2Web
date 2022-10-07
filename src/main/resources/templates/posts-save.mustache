@@ -1,0 +1,26 @@
+{{>layout/header}}
+
+<h1>Upload post</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter title">
+            </div>
+            <div class="form-group">
+                <label for="author"> Author </label>
+                <input type="text" class="form-control" id="author" placeholder="Enter author">
+            </div>
+            <div class="form-group">
+                <label for="content"> Content </label>
+                <textarea class="form-control" id="content" placeholder="Enter content"></textarea>
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">Cancel</a>
+        <button type="button" class="btn btn-primary" id="btn-save">Upload</button>
+    </div>
+</div>
+
+{{>layout/footer}}
