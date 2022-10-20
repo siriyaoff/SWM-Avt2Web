@@ -1,7 +1,6 @@
 package com.avatar2.home.web;
 
 import com.avatar2.home.web.dto.InferenceRequestDto;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
 
-@RequiredArgsConstructor
 @RestController
 public class InferenceController {
     @PostMapping("/create")
