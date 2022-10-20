@@ -6,6 +6,7 @@ build/
 !**/src/test/**/build/
 src/main/resources/application-oauth.properties
 src/main/resources/application-real-db.properties
+*.DS_Store
 
 ### STS ###
 .apt_generated
