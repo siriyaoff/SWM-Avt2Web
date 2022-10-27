@@ -52,6 +52,26 @@ function unityShowBanner(msg, type) {
     updateBannerVisibility();
 }
 
+var img = new Image;
+var c = document.createElement("canvas");
+var ctx = c.getContext("2d");
+var png;
+
+img.onload = function () {
+    c.width = this.naturalWidth;     // update canvas size to match image
+    c.height = this.naturalHeight;
+    ctx.drawImage(this, 0, 0);       // draw in image
+    c.toBlob(function (blob) {        // get content as JPEG blob
+        png = blob;
+    }, "image/png", 0.75);
+};
+img.crossOrigin = "";              // if from different origin
+img.src = "https://i.imgur.com/ozvfB7F.png";
+
+let reader = new FileReader();
+reader.onloadend = function () {
+    reader.readAsDataURL(png);
+}
 
 script.onload = () => {
     createUnityInstance( document.getElementById('unity-canvas'), config, (progress) => {
@@ -59,8 +79,11 @@ script.onload = () => {
     }).then((unityInstance) => {
         document.getElementById('unity-loading-bar').style.display = "none";
         document.getElementById('unity-fullscreen-button').onclick = () => {
-            console.log(unityInstance);
-            unityInstance.SendMessage('Cube', 'MoveCube', 0.8);
+            unityInstance.SendMessage('Canvas', 'receiveBytearr', reader.readAsDataURL(png));
+            //unityInstance.SendMessage('Canvas', 'receiveTexture2D', png );
+            //unityInstance.SendMessage('Canvas', 'receiveSprite', png );
+            
+
             //unityInstance.SetFullscreen(1);
         };
     }).catch((message) => {

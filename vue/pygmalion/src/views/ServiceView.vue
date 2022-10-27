@@ -12,7 +12,7 @@ import UnityWebgl from '../components/UnityWebgl.vue'
 export default {
     data: function(){
         return{
-            BoolFileSub: false,
+            BoolFileSub: true,
             BoolFileInput: false,
         }
     },
