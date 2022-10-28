@@ -14,7 +14,7 @@ public class InferenceRequestDto {
     //private Long id;
     private int height;
     private MultipartFile psd;
-    private Cookie cookie;
+    private String curtime;
 
 
     @Builder
@@ -22,6 +22,6 @@ public class InferenceRequestDto {
         //this.id = id;
         this.height = height;
         this.psd = psd;
-        this.cookie=new Cookie("time", LocalTime.now().toString());
+        this.curtime = LocalTime.now().toString().substring(0, 12);
     }
 }

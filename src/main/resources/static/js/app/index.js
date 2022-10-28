@@ -10,6 +10,29 @@ var main = {
         $('#btn-delete').on('click', function () {
             _this.delete();
         });
+        $('#btn-inftest').on('click', function (){
+            alert('inftest call');
+            _this.inftest();
+            alert('executed');
+        });
+    },
+    inftest : function() {
+        var formData=new FormData(document.getElementById('infform'));
+        $.ajax({
+            type: 'POST',
+            enctype: 'multipart/form-data',
+            url: '/reqdto',
+            data: formData,
+            processData: false,
+            contentType: false
+        }).done(function(res) {
+            alert(formData.get('height'));
+            alert('request done.');
+            alert(res);
+        }).fail(function (error) {
+            alert('error occured');
+            alert(JSON.stringify(error));
+        });
     },
     save : function () {
         var data = {
