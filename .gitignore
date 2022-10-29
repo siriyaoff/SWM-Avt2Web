@@ -6,7 +6,7 @@ build/
 !**/src/test/**/build/
 src/main/resources/application-oauth.properties
 src/main/resources/application-real-db.properties
-*.DS_Store
+.DS_Store
 
 ### node ###
 vue/pygmalion/node_modules
