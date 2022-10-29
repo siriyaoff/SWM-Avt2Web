@@ -6,6 +6,18 @@ build/
 !**/src/test/**/build/
 src/main/resources/application-oauth.properties
 src/main/resources/application-real-db.properties
+.DS_Store
+
+### node ###
+vue/pygmalion/node_modules
+vue/pygmalion/dist
+.env.local
+.env.*.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 ### STS ###
 .apt_generated
