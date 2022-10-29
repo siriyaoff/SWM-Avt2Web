@@ -47,8 +47,9 @@ export default {
             else{
                 this.$emit("IsFileSub");
                 var formdata = new FormData();
+                var stringtest = 'test';
                 formdata.append('psd', this.file1)
-                postPsdFile(formdata)
+                postPsdFile(stringtest)
                     .then((res) => {
                         console.log(res);
                     })

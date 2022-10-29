@@ -19,7 +19,7 @@ function get3DModel() {
 }
 
 function postPsdFile(data) {
-    return AxiosInst.post('/inferencetest', data);
+    return AxiosInst.post('/stringtest', data);
 }
 
 function getAiStatus() {
