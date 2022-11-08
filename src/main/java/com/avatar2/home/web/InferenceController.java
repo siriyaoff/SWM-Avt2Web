@@ -77,7 +77,7 @@ public class InferenceController {
      */
     @GetMapping("/inftest")
     public String inftest() {
-        String res;
+        String res="";
         try {
             // create InferenceRequestDto
             File file = new File("/home/ec2-user/tpsd.psd");
@@ -90,6 +90,8 @@ public class InferenceController {
                     .height(165)
                     .psd(psd)
                     .build();
+
+            res += "!";
 
             // create MultipartBodyBuilder
             MultipartBodyBuilder builder = new MultipartBodyBuilder();
@@ -105,6 +107,8 @@ public class InferenceController {
             };
             builder.part("file", bar);
 
+            res += "@";
+
             // create webclient, send request
             ExchangeStrategies exchangeStrategies = ExchangeStrategies.builder()
                     .codecs(configurer -> configurer.defaultCodecs().maxInMemorySize(300 * 1024 * 1024))
@@ -119,9 +123,10 @@ public class InferenceController {
                     .retrieve()
                     .bodyToMono(InferenceResponseDto.class)
                     .block();
-            res = ""+resdto.getIris().getBytes().length;
+            res += "#";
+            res += "" + resdto.getErr();
         } catch (Exception e) {
-            res = "Error on '/ptrig' :: " + e.getMessage();
+            res += "\nError on '/ptrig' :: " + e.getMessage();
         }
         return res;
     }
