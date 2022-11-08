@@ -27,6 +27,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 @RestController
+@CrossOrigin(origins="http://localhost:8080, " +
+        "http://localhost:3000, " +
+        "http://ec2-13-124-191-61.ap-northeast-2.compute.amazonaws.com:8080, " +
+        "http://ec2-13-209-174-9.ap-northeast-2.compute.amazonaws.com:8080", allowedHeaders="*")
 public class InferenceController {
     /**
      * for service
