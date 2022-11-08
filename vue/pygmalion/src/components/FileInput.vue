@@ -11,6 +11,12 @@
           accept=".psd"
         ></b-form-file>
         <div class="mt-3">Selected file: {{ file1 ? file1.name : "" }}</div>
+        <b-form-input
+          id="height"
+          v-momdel="height1"
+          placeholder="Enter height"
+        ></b-form-input>
+        <div class="mt-2">Value: {{ height1 ? height1 : "165" }}</div>
         <button v-on:click="FileSubmit">Submit</button>
       </div>
     </div>
@@ -37,6 +43,7 @@ export default {
   data() {
     return {
       file1: null,
+      height1: 165,
       showModal: false,
     };
   },
@@ -48,6 +55,7 @@ export default {
         this.$emit("IsFileSub");
         var formdata = new FormData();
         formdata.append("psd", this.file1);
+        formdata.append("height", this.height1);
         postPsdFile(formdata)
           .then((res) => {
             console.log(res);
