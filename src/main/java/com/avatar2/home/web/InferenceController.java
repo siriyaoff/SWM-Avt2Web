@@ -250,7 +250,7 @@ public class InferenceController {
             OutputStream os = fileItem.getOutputStream();
             IOUtils.copy(input, os);
             MultipartFile iris = new CommonsMultipartFile(fileItem);
-            inferenceResponseDto = new InferenceResponseDto(coord, eyelash, iris, "");
+            inferenceResponseDto = new InferenceResponseDto(coord, eyelash, iris.getBytes(), "");
             System.out.println(jsonObject);
             System.out.println("\nresdto created");
         } catch (Exception e) {
