@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div id="submitbox">
+        <div id="submitbox" v-if="!isLoading">
         <div id="submitunit">
         <!-- <form action="https://ec2-13-124-191-61.ap-northeast-2.compute.amazonaws.com:8080/"
          id="infform" method="post" enctype="multipart/form-data"> -->
@@ -14,6 +14,9 @@
         <button v-on:click="FileSubmit">Submit</button>
         <!-- </form> -->
         </div>
+        </div>
+        <div class="d-flex justify-content-center mb-3 m-5">
+        <b-spinner label="Loading..." v-if="isLoading"></b-spinner>
         </div>
         <Modal v-if="showModal" @close="showModal = false">
             <!--
@@ -37,6 +40,7 @@ import { postPsdFile } from '../api/index'
 export default {
     data() {
         return {
+            isLoading:false,
             file1: null,
             showModal: false,
             height1: '160',
@@ -49,15 +53,15 @@ export default {
                 this.showModal = !this.showModal;
             }
             else{
+                this.isLoading = !this.isLoading;
                 this.$emit("IsFileSub");
                 var formdata = new FormData();
                 formdata.append('psd', this.file1);
                 formdata.append('height', this.height1);
                 postPsdFile(formdata)
                     .then((res) => {
+                        this.isLoading = !this.isLoading;
                         console.log(res);
-                    })
-                    .then(() => {
                         this.$router.push('/result');
                     })
                     .catch((ex) => {
