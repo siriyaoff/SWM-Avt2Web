@@ -23,19 +23,19 @@
               you can use custom content here to overwrite
               default content
             -->
-            <h3 slot="header" id="modalHeader">
-                경고!
-                <i class="fas fa-times closeModalBtn" @click="showModal = false"></i>
-            </h3>
-            <div slot="body">파일을 선택해 주십시오.</div>
-            <div slot="footer"></div>
-        </Modal>
-    </div>
+      <h3 slot="header" id="modalHeader">
+        경고!
+        <i class="fas fa-times closeModalBtn" @click="showModal = false"></i>
+      </h3>
+      <div slot="body">파일을 선택해 주십시오.</div>
+      <div slot="footer"></div>
+    </Modal>
+  </div>
 </template>
 
 <script>
-import Modal from './common/AlertModal.vue'
-import { postPsdFile } from '../api/index'
+import Modal from "./common/AlertModal.vue";
+import { postPsdFile } from "../api/index";
 
 export default {
     data() {
@@ -79,28 +79,28 @@ export default {
 </script>
 
 <style scoped>
-#submitbox{
-    top: 150px;
-    position: absolute;
-    left: 50%;
-    margin-left: -30%;
-    width: 60%;
-    border: 2px solid #b3adad;
-    border-radius: 5px 5px 5px 5px;
+#submitbox {
+  top: 150px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30%;
+  width: 60%;
+  border: 2px solid #b3adad;
+  border-radius: 5px 5px 5px 5px;
 }
-#submitunit{   
-    margin: 30px 30px 30px 30px;
+#submitunit {
+  margin: 30px 30px 30px 30px;
 }
 button {
-    float: right;
-    margin: 0 0 30px;
+  float: right;
+  margin: 0 0 30px;
 }
 #modalHeader {
-    color: black;
+  color: black;
 }
 .closeModalBtn {
-    color: #b3adad;
-    margin-left: 125px;
+  color: #b3adad;
+  margin-left: 125px;
 }
 #HeightCont{
     padding-top: 20px;
