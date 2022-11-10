@@ -1,15 +1,15 @@
 <template>
     <div>
-        <FileInput></FileInput>
+        <UnityWebgl></UnityWebgl>
     </div>
 </template>
 
 <script>
-import FileInput from '../components/FileInput.vue'
+import UnityWebgl from '../components/UnityWebgl.vue'
 
 export default {
     components: {
-        FileInput,
+        UnityWebgl,
     },
 }
 </script>
@@ -31,5 +31,13 @@ button {
 
 .shadow {
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03);
+}
+
+.ShowUnityContainer {
+    display: none;
+}
+
+.ShowInputBox {
+    display: none;
 }
 </style>

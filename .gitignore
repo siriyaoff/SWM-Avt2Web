@@ -11,9 +11,11 @@ src/main/resources/application-real-db.properties
 ### node ###
 vue/pygmalion/node_modules
 vue/pygmalion/dist
-src/main/resources/static/*
+vue/pygmalion/public/Build
+src/main/resources/static/
 .env.local
 .env.*.local
+
 
 npm-debug.log*
 yarn-debug.log*
@@ -50,3 +52,4 @@ out/
 
 ### VS Code ###
 .vscode/
+

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MainView from '../views/MainView.vue'
 import ServiceView from '../views/ServiceView.vue'
+import UnityWebGLView from '../views/UnityWebGLView.vue'
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,13 @@ export const router = new VueRouter({
                 title: 'Service'
             }
         },
+        {
+            path: '/result',
+            component: UnityWebGLView,
+            meta: {
+                title: 'Service'
+            }
+        }
     ]
 });
 
