@@ -60,13 +60,17 @@ export default {
                 formdata.append('height', this.height1);
                 postPsdFile(formdata)
                     .then((res) => {
-                        this.isLoading = !this.isLoading;
-                        console.log(res);
-                        this.$router.push('/result');
+                      this.isLoading = !this.isLoading;
+                      localStorage.setItem('face', "{\"Point\":" + JSON.stringify(res.data.coord) + "}");
+                      localStorage.setItem('eyelash', "{\"Point\":" + JSON.stringify(res.data.eyelash) + "}");
+                      localStorage.setItem('iris', res.data.iris);
+                      this.$router.push('/result');
+                      location.reload();
                     })
                     .catch((ex) => {
                         console.log('Error:', ex);
-                        this.$router.push('/result');
+                      this.$router.push('/result');
+                      location.reload();
                     })
             //document.getElementById("#app").style = "display: none";
             }
