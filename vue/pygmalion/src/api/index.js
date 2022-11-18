@@ -12,38 +12,8 @@ AxiosInst.interceptors.request.use((config) => {
 
 export default AxiosInst;
 
-function get3DModel() {
-  return axios.get("/get/test");
-}
-
 function postPsdFile(data) {
   return AxiosInst.post("/create", data);
 }
 
-function getAiStatus() {
-  return axios.get("");
-}
-
-// get3DModel()
-// .then(res => {
-//     console.log(res.data)
-// })
-// .catch((ex) => {
-//     console.log('Error:', ex);
-// })
-
-// postPsdFile()
-// .then((res) => {
-//     this.result = res.data;
-// })
-// .catch((ex) => {
-//     console.log('Error:', ex);
-// })
-
-// getAiStatus()
-// .then()
-// .catch((ex) => {
-//     console.log('Error:', ex);
-// })
-
-export { get3DModel, postPsdFile, getAiStatus };
+export { postPsdFile };

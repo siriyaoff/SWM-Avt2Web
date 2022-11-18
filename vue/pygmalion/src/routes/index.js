@@ -16,6 +16,7 @@ export const router = new VueRouter({
         {
             path: '/main',
             component: MainView,
+            name: 'Main',
             meta: {
                 title: 'Pygmalion'
             }
@@ -23,6 +24,7 @@ export const router = new VueRouter({
         {
             path: '/service',
             component: ServiceView,
+            name: 'Service',
             meta: {
                 title: 'Service'
             }
@@ -30,6 +32,8 @@ export const router = new VueRouter({
         {
             path: '/result',
             component: UnityWebGLView,
+            name: 'Result',
+            props: true,
             meta: {
                 title: 'Service'
             }
