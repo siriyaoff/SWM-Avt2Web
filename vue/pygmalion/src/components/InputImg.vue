@@ -1,6 +1,6 @@
 <template>
 <div>
-  <b-img v-bind:src="require('../assets/'+propsdata)" fluid-grow alt="Fluid-grow image"></b-img>
+  <b-img v-bind:src="require('../assets/'+propsdata)" fluid-grow rounded alt="Fluid-grow image"></b-img>
 </div>
 </template>
 
