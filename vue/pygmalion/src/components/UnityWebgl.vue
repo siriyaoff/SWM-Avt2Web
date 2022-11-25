@@ -9,9 +9,8 @@
         </div>
         <div id="unity-warning"> </div>
         <div id="unity-footer">
-            <div id="unity-webgl-logo"></div>
-            <div id="unity-fullscreen-button"></div>
-            <div id="unity-build-title">uma_grond</div>
+            <i class="fas fa-check-square fa-2x" id="unity-fullscreen-button"></i>
+            <div id="unity-build-title">apply</div>
         </div>
     </div>
 </template>
@@ -65,7 +64,7 @@ script.onload = () => {
             unityInstance.SendMessage('EyelashMakerMirror (1)', 'MakeEyelash', localStorage.getItem('eyelash'))
             unityInstance.SendMessage('DynamicAvatar1', 'SetFaceParameter', localStorage.getItem('face'))
             unityInstance.SendMessage('DynamicAvatar1', 'ChangeEye', localStorage.getItem('iris'))
-        };
+        }
     }).catch((message) => {
         alert(message);
     });
@@ -114,12 +113,6 @@ body {
     display: block;
 }
 
-#unity-logo {
-    width: 154px;
-    height: 130px;
-    background: url('../../public/TemplateData/unity-logo-light.png') no-repeat center
-}
-
 #unity-progress-bar-empty {
     width: 141px;
     height: 18px;
@@ -143,13 +136,6 @@ body {
     display: none
 }
 
-#unity-webgl-logo {
-    float: left;
-    width: 204px;
-    height: 38px;
-    background: url('../../public/TemplateData/webgl-logo.png') no-repeat center
-}
-
 #unity-build-title {
     float: right;
     margin-right: 10px;
@@ -162,7 +148,6 @@ body {
     float: right;
     width: 38px;
     height: 38px;
-    background: url('../../public/TemplateData/fullscreen-button.png') no-repeat center
 }
 
 #unity-warning {

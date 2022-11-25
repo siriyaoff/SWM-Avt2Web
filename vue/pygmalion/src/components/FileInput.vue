@@ -4,7 +4,7 @@
         <div id="submitunit">
         <!-- <form action="https://ec2-13-124-191-61.ap-northeast-2.compute.amazonaws.com:8080/"
          id="infform" method="post" enctype="multipart/form-data"> -->
-        <b-form-file id="psdfile" v-model="file1" :state="Boolean(file1)" placeholder="Choose a file or drop it here..."
+        <b-form-file id="psdfile" v-model="file1" :state="Boolean(file1)" placeholder="Input a PSD file here..."
             drop-placeholder="Drop file here..." accept=".psd" type="file" name="psd"></b-form-file>
         <div class="mt-3">Selected file: {{ file1 ? file1.name : '' }}</div>
         <div id="HeightCont">
